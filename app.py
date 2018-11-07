@@ -16,7 +16,7 @@ def verify():
     # when the endpoint is registered as a webhook, it must echo back
     # the 'hub.challenge' value it receives in the query arguments
     if request.args.get("hub.mode") == "subscribe" and request.args.get("hub.challenge"):
-        if not request.args.get("hub.verify_token") == "Are_you_BOT":
+        if not request.args.get("hub.verify_token") == "your_verify_token":
             return "Verification token mismatch", 403
         return request.args["hub.challenge"], 200
 
@@ -113,7 +113,7 @@ def send_message(recipient_id, message_text):
     log("sending message to {recipient}: {text}".format(recipient=recipient_id, text=message_text))
 
     params = {
-        "access_token": "EAAE6mkoaEHkBAGpxgr2bN8MCdnYdmB8cZAwQwIPP2RSUJSiAqbAptIBfws7xlLv3nChZCXDMI43kaBfuh57CdSTgkDvPjAvaKQjxBAe6iYz1eDfhydpIcqfTq6nMsCRQ8dE0WCIjpUZBgcd4nXYdpxR5G8gxBUmMR6yEwDxjFY2oMpC4rVcZB8v3WQk7Qy0ZD"
+        "access_token": "your_access_token"
     }
     headers = {
         "Content-Type": "application/json"
@@ -212,7 +212,7 @@ def send_button_message(recipient_id):
 def call_send_api(message_data):
 
     params = {
-        "access_token": "EAAE6mkoaEHkBAGpxgr2bN8MCdnYdmB8cZAwQwIPP2RSUJSiAqbAptIBfws7xlLv3nChZCXDMI43kaBfuh57CdSTgkDvPjAvaKQjxBAe6iYz1eDfhydpIcqfTq6nMsCRQ8dE0WCIjpUZBgcd4nXYdpxR5G8gxBUmMR6yEwDxjFY2oMpC4rVcZB8v3WQk7Qy0ZD"
+        "access_token": "your_access_token"
     }
     headers = {
         "Content-Type": "application/json"
