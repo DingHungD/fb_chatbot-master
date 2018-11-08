@@ -1,4 +1,4 @@
-import os
+﻿import os
 import sys
 import json
 from datetime import datetime
@@ -104,7 +104,7 @@ def message_processing(sender_id, message_text):
                 break
             else:
                 pass
-        sender_message(sender, "能不能說的更簡單呢")
+        #sender_message(sender, "能不能說的更簡單呢")
     except:
         send_message(sender_id, "這個是火星文")
 
