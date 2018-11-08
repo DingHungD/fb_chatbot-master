@@ -103,8 +103,7 @@ def message_processing(sender_id, message_text):
                 send_message(sender_id, "your id is " + sender_id)
                 break
             else:
-                pass
-        #sender_message(sender, "能不能說的更簡單呢")
+        	sender_message(sender_id, "能不能說的更簡單呢")
     except:
         send_message(sender_id, "這個是火星文")
 
