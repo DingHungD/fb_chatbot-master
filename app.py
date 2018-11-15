@@ -14,7 +14,7 @@ import Chatbot.chatbot as Chatbot
 
 
 
-chatter = Chatbot.Chatbot(build_console=False)
+#chatter = Chatbot.Chatbot(build_console=False)
 app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
@@ -110,8 +110,9 @@ def message_processing(sender_id, message_text):
                 send_message(sender_id, "your id is " + sender_id)
                 break
             else:
-                reply,confidence = chatter.testQuestionAnswering(sl)
-                send_message(sender_id, reply)
+#                reply,confidence = chatter.testQuestionAnswering(sl)
+#                send_message(sender_id, reply)
+                send_message(sender_id, "說簡單點")
                 break
     except:
         send_message(sender_id, "這個是火星文")
