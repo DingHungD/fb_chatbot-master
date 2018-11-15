@@ -8,7 +8,7 @@ import jieba
 import requests
 from flask import Flask, request, render_template
 
-import Chatbot.chatbot as Chatbot
+#import Chatbot.chatbot as Chatbot
 
 
 
