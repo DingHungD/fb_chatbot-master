@@ -8,6 +8,13 @@ import jieba
 import requests
 from flask import Flask, request, render_template
 
+import Chatbot.chatbot as Chatbot
+
+
+
+
+
+chatter = Chatbot.Chatbot(build_console=False)
 app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
@@ -103,7 +110,8 @@ def message_processing(sender_id, message_text):
                 send_message(sender_id, "your id is " + sender_id)
                 break
             else:
-                send_message(sender_id, "能不能說的更簡單呢")
+                reply,confidence = chatter.testQuestionAnswering(sl)
+                send_message(sender_id, reply)
                 break
     except:
         send_message(sender_id, "這個是火星文")
@@ -239,5 +247,6 @@ def log(msg, *args, **kwargs):  # simple wrapper for logging to stdout on heroku
 
 
 if __name__ == '__main__':
+
     app.run(debug=True)
 
